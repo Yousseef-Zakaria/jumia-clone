@@ -1,0 +1,44 @@
+button{
+  position: absolute;
+  bottom: 5%;
+  left: 16.6%;
+  width: 10rem;
+  background-color: #f58a1e !important;
+  border: none !important;
+  transition: 0.2s;
+  color: white;
+}
+button:hover{
+  background-color: #cd7319 !important;
+  color: white;
+}
+@media only screen and (max-width: 600px) {
+  .card{
+    width: 8rem !important;
+    height: 15rem !important;
+  }
+  
+  .card button{
+    opacity: 1 !important;
+    width: 100%;
+    font-size: 1rem !important;
+    bottom: 0;
+    left: 0;
+  }
+}
+.shado{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+h5{
+  white-space: nowrap;      /* يمنع النص من الالتفاف على سطر جديد */
+  overflow: hidden;         /* يخفي النص الزائد */
+  text-overflow: ellipsis;
+}
+ngb-toast {
+  position: fixed;
+  top: 0;
+  right: 25%;
+  letter-spacing: 0.2em;
+  margin: 0.5em;
+  z-index: 1200;
+}

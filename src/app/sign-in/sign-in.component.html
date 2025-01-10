@@ -1,0 +1,27 @@
+<main class="d-flex justify-content-center" >
+  <section class=" text-center d-flex justify-content-center flex-column align-items-center">
+    <div class="img-container">
+    <img src="https://companieslogo.com/img/orig/JMIA-356fb835.png?t=1659936321" style="width: 100%;" alt="">
+    </div>
+    <span class="fw-bold fs-4 mt-3">Welcome to Jumia</span>
+    @if(!isUserLogeed){
+    <span class="text-wrap mb-3 fs-6">Type your e-mail or phone number to log in or create a Jumia account.</span>
+    <form class="w-100" (ngSubmit)="logInSubmit(ref)" #ref="ngForm">
+      <div class="mb-3">
+        <input type="email" ngModel name="Email" placeholder="Email or phone number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <input placeholder="password" ngModel name="Password" type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+
+      <button type="submit" class="btn w-100 continue rounded-1 fw-medium text-light">Continue</button>
+
+    </form>
+  }@else {
+    <span class="fs-4">Hello {{userEamil}}</span>
+    <span class="fs-4">you already loged in do yo want to log out?</span>
+    <button type="submit" class="btn w-50 btn-danger rounded-1 fw-medium text-light"
+    (click)="logOut()">log out</button>
+  }
+  </section>
+</main>

@@ -1,0 +1,71 @@
+main{
+  background-color: #F1F1F2;
+}
+.top-section{
+  background-color: #FFF2D6;
+  height: 6vh;
+}
+.img-container a{
+  transition: 0.2s;
+  width: 32% !important;
+}
+.img-container2 a{
+  transition: 0.2s;
+  width: 15.5% !important;
+  white-space: nowrap;      /* يمنع النص من الالتفاف على سطر جديد */
+  overflow: hidden;         /* يخفي النص الزائد */
+  text-overflow: ellipsis;
+}
+@media only screen and (max-width: 600px) {
+  .img-container2 a{
+    width: 25% !important;
+    display: block !important;
+    flex-direction: column !important;
+    font-size: 0.1em !important;
+  }
+  .img-container2{
+    gap: 1em;
+  }
+  section{
+    width: 97% !important;
+  }
+
+}
+.img-container3 a{
+  transition: 0.2s;
+  width: 15.5% !important;
+  white-space: nowrap;      /* يمنع النص من الالتفاف على سطر جديد */
+  overflow: hidden;         /* يخفي النص الزائد */
+  text-overflow: ellipsis;
+}
+.img-container3 a h3{
+  white-space: nowrap;      /* يمنع النص من الالتفاف على سطر جديد */
+  overflow: hidden;         /* يخفي النص الزائد */
+  text-overflow: ellipsis;
+}
+a img{
+  width: 100%;
+  height: auto;
+}
+.img-container a:hover{
+  transform: scale(1.03);
+}
+.img-container2 a:hover{
+  transform: scale(1.03);
+}
+.img-container3 a:hover{
+  transform: scale(1.03);
+}
+
+.cont a{
+  width: 32%;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.cont a:hover{
+  transform: scale(1.03);
+}
+.shad
+{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

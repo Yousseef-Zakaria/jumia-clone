@@ -1,0 +1,20 @@
+main{
+  margin-top: 5em !important;
+}
+.img-container
+{
+  width: 10%;
+}
+section
+{
+  width: 32%;
+}
+.continue
+{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: #F9A03D;
+}
+.continue:hover{
+  background-color: #ff9419;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}

@@ -1,0 +1,19 @@
+<!--jumiaaaaaaaaaaaaaaaaa-->
+<main class="w-100 d-flex mt-5 justify-content-center ">
+
+  <section class="w-75 mt-5 d-flex flex-wrap gap-3 bg-light">
+    @if(selectedProduct){
+    <aside class="left w-25">
+      <img [src]="selectedProduct.image" class="img-fluid" alt="">
+
+    </aside>
+    <aside class="right w-75 d-flex justify-content-between flex-column">
+      <h1 class="fs-3">{{selectedProduct.title}}</h1>
+      <h3 class="fs-6">{{selectedProduct.description}}</h3>
+      <h4 class="fs-r fw-bold">{{selectedProduct.price|eGPcurrency}}</h4>
+      <button class="btn w-75 align-self-center" (click)="AddtoCart(selectedProduct)">Add To Cart</button>
+    </aside>
+  }
+  </section>
+
+</main>

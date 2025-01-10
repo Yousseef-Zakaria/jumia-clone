@@ -1,0 +1,57 @@
+header{
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 50;
+}
+@media only screen and (max-width: 600px) {
+  .none{
+    display: none !important;
+  }
+  header nav form {
+    width: 90% !important;
+    margin-left:0 !important ;
+
+  }
+  header nav{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-evenly !important;
+  }
+}
+.badge{
+  background-color : #F68B1E ;
+  border-radius: 50% !important;
+}
+header nav form button{
+  background-color: #f68b1e;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+  border: none;
+}
+header nav a:hover , button span:hover{
+  color: #F68D22 !important;
+}
+header nav a , button span
+{
+  transition: 0.2s;
+  border: none !important;
+}
+.bg-yly{
+  background-color: #f68b1e;
+  font-weight: 500;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+  color: #ffffff;
+  transition: 0.2s;
+}
+.bg-yly:hover{
+  background-color: #dd7c1a;
+}
+.active
+{
+  color: #F68B1E !important;
+}
+.cart{
+  width: 10% !important;
+}

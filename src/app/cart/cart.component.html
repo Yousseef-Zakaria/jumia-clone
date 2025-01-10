@@ -1,0 +1,65 @@
+@if (clicked) {
+  <ngb-toast class="bg-danger fw-bold text-light w-50 text-center" header="close">
+    <span class="fs-5">
+      Item Removed From Cart !
+    </span>
+  </ngb-toast>
+  }
+<main class="d-flex justify-content-center mt-5 w-100">
+  <section class="w-75 mt-5 d-flex flex-wrap justify-content-evenly">
+    <aside class="left d-flex flex-column  bg-light">
+      <span class="fs-4 ps-2 pt-2">Cart ({{cart.getCartProducts().length}})</span>
+      <hr>
+      @for (product of cart.getCartProducts(); track product.id) {
+      <div class="d-flex flex-column ">
+      <div class="d-flex md ">
+
+
+      <div class="d-flex w-75 md-100 flex-wrap flex-column ">
+        <a class="d-flex text-black text-decoration-none gap-2">
+          <div class="w-100 d-flex ps-2 align-items-start">
+            <img [src]="product.image" class="w-25" alt="">
+            <span class="ps-2 fs-6">{{product.title}}</span>
+          </div>
+        </a>
+          <button (click)="cart.removeProductFromCart(this.product)" (click)="removeItem(this.product)"
+          class="remove mt-3 ms-3 bg-light">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
+            REMOVE
+          </button>
+      </div>
+      <div class="w-25 quan d-flex flex-column   align-items-center  gap-5">
+        <span class="fs-5 ">{{product.price*product.count|eGPcurrency}}</span>
+        <div class="w-50 d-flex justify-content-between">
+          <button (click)="decreaseQuant(this.product)" [disabled]="product.count==1"
+          class="quantite-buttons rounded-1">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+          </button>
+          <span>{{product.count}}</span>
+          <button (click)="increaseQuant(this.product)"
+          class="quantite-buttons rounded-1">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <hr>
+</div>}
+    </aside>
+    <aside class="right w-25 border-2 d-flex flex-column ms-3 border-black bg-light">
+      <span class="fs-5 ps-2 mt-3">CART SUMMARY</span>
+      <hr>
+      <div class="d-flex justify-content-between px-2">
+        <span class="fs-5">Subtotal</span>
+        <span class="fs-5">{{totalPrice|eGPcurrency}}</span>
+      </div>
+      <hr>
+      <button class="btn w-75 align-self-center mb-3">
+        CHECKOUT ({{totalPrice|eGPcurrency}})
+    </button>
+      <button class="btn bg-danger w-75 align-self-center mb-3" (click)="cart.clearCart()">
+          CLEAR CART
+    </button>
+    </aside>
+  </section>
+</main>

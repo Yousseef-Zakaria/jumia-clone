@@ -1,0 +1,26 @@
+<!-- <ng-template #successTpl> I'm a success toast </ng-template> -->
+@if (addedTo) {
+<ngb-toast class="bg-success fw-bold text-light w-50 text-center" header="close">
+  <span class="fs-5">
+    Item Added to Cart Successfuly
+    <svg xmlns="http://www.w3.org/2000/svg" height="32" width="28" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+  </span>
+</ngb-toast>
+}
+<div class="card  d-flex flex-column gap-1" style="width: 15rem; height:27rem;"
+(mouseenter)="isEnterd=true"
+(mouseleave)="isEnterd=false"
+[ngClass]="isEnterd ? 'shado': ''"
+>
+  <a class="" [routerLink]="['/product-details/',globalProduct.id]">
+  <img [src]="globalProduct.image" class="card-img-top " alt=""></a>
+  <div class="card-body">
+    <h5 class="card-title">{{globalProduct.title}}</h5>
+    <p class="card-text">{{globalProduct.price|eGPcurrency}}</p>
+    <button
+    [style.opacity]="isEnterd?'1':'0'"
+    class="btn" (click)="addToCart(globalProduct)"
+    >ADD TO CART</button>
+  </div>
+
+</div>

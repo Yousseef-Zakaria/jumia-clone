@@ -1,0 +1,14 @@
+main{
+  background-color: #F1F1F2;
+}
+button{
+  height: 15% !important;
+  background-color: #f58a1e !important;
+  border: none !important;
+  transition: 0.2s;
+  color: white;
+}
+button:hover{
+  background-color: #cd7319 !important;
+  color: white;
+}
